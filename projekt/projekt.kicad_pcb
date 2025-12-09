@@ -37,6 +37,7 @@
 		(pad_to_mask_clearance 0)
 		(allow_soldermask_bridges_in_footprints no)
 		(tenting front back)
+		(grid_origin 170 75)
 		(pcbplotparams
 			(layerselection 0x00000000_00000000_55555555_5755f5ff)
 			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
@@ -89,10 +90,13 @@
 	(net 9 "Net-(J1-PadP)")
 	(net 10 "Net-(U1-DIS)")
 	(net 11 "/OUT")
+	(net 12 "Net-(U1-CV)")
+	(net 13 "Net-(D1-K)")
+	(net 14 "Net-(D10-A)")
 	(footprint "LED_SMD:LED_PLCC-2_3x2mm_KA"
 		(layer "F.Cu")
 		(uuid "044b1ac0-1510-4b7f-a72a-40965601f15a")
-		(at 181.46 66)
+		(at 157.575 116)
 		(descr "LED, SMD, PLCC-2, 3.0 x 2.0mm, orientation marker at cathode, https://optoelectronics.liteon.com/upload/download/DS22-2009-0099/LTW-M670ZVS-M5_0906.pdf")
 		(tags "LED PLCC-2 SMD")
 		(property "Reference" "D8"
@@ -149,6 +153,45 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "303088d1-39cd-424c-91fc-84b726d53f33")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1b8622d8-f203-4904-9811-6f26afb90970")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Library" "led.lib"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "840fd28a-b609-4684-969e-5ad570f19d14")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Name" "LED_GENERAL"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6b25f479-090b-4d30-900a-213d19bfe67c")
 			(effects
 				(font
 					(size 1 1)
@@ -367,7 +410,7 @@
 			(at 1.425 0)
 			(size 1.55 2.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 4 "VCC")
+			(net 14 "Net-(D10-A)")
 			(pinfunction "A")
 			(pintype "passive")
 			(uuid "b87b2ce8-568e-4050-a97a-e7e702209dad")
@@ -388,7 +431,7 @@
 	(footprint "Capacitor_THT:CP_Radial_D4.0mm_P2.00mm"
 		(layer "F.Cu")
 		(uuid "1d64d698-bb47-406c-a4e2-719a8ee35201")
-		(at 149.5 66.5)
+		(at 158 67.5)
 		(descr "CP, Radial series, Radial, pin pitch=2.00mm, diameter=4mm, height=7mm, Electrolytic Capacitor")
 		(tags "CP Radial series Radial pin pitch 2.00mm diameter 4mm height 7mm Electrolytic Capacitor")
 		(property "Reference" "C1"
@@ -1503,11 +1546,11 @@
 	(footprint "LED_SMD:LED_PLCC-2_3x2mm_KA"
 		(layer "F.Cu")
 		(uuid "1dc70a75-b789-4ce4-afea-4a400da3331a")
-		(at 175.425 54.24)
+		(at 170.125631 66.425 90)
 		(descr "LED, SMD, PLCC-2, 3.0 x 2.0mm, orientation marker at cathode, https://optoelectronics.liteon.com/upload/download/DS22-2009-0099/LTW-M670ZVS-M5_0906.pdf")
 		(tags "LED PLCC-2 SMD")
 		(property "Reference" "D1"
-			(at 0 -2 0)
+			(at 0 -2 90)
 			(layer "F.SilkS")
 			(uuid "a8944bf2-ef1a-40d9-9926-56685bbed12e")
 			(effects
@@ -1518,7 +1561,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 0 2 0)
+			(at 0 2 90)
 			(layer "F.Fab")
 			(uuid "46ad449d-b376-4379-9210-f730267563d3")
 			(effects
@@ -1529,7 +1572,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 0 0 0)
+			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -1542,7 +1585,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 0 0 0)
+			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -1554,8 +1597,8 @@
 				)
 			)
 		)
-		(property "Sim.Pins" "1=A 2=K"
-			(at 0 0 0)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -1568,11 +1611,37 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 0 0 0)
+			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c12fcfcf-0e4e-4017-9529-d7e58e04a271")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Library" "led.lib"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3652c557-271e-4bec-9533-156622fdd9ec")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Name" "LED_GENERAL"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9578d9cf-30f7-48cb-8308-5d793319a339")
 			(effects
 				(font
 					(size 1 1)
@@ -1586,6 +1655,16 @@
 		(sheetfile "projekt.kicad_sch")
 		(attr smd)
 		(fp_line
+			(start 2.2 -1.4)
+			(end -2.5 -1.4)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "30bc26e3-b233-4112-a8b7-01afb69c9a18")
+		)
+		(fp_line
 			(start -2.5 -1.4)
 			(end -2.5 1.4)
 			(stroke
@@ -1594,16 +1673,6 @@
 			)
 			(layer "F.SilkS")
 			(uuid "08cfa86c-ed08-4071-be50-72c4c9c2b985")
-		)
-		(fp_line
-			(start -2.5 1.4)
-			(end 2.2 1.4)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "f664eb36-8af5-4030-8072-3a5095327de0")
 		)
 		(fp_line
 			(start 0.35 -1.1)
@@ -1626,34 +1695,14 @@
 			(uuid "f15d9a80-0294-4623-ac72-3adf25229eba")
 		)
 		(fp_line
-			(start 2.2 -1.4)
-			(end -2.5 -1.4)
+			(start -2.5 1.4)
+			(end 2.2 1.4)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "30bc26e3-b233-4112-a8b7-01afb69c9a18")
-		)
-		(fp_line
-			(start -2.45 -1.35)
-			(end 2.45 -1.35)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "fd9f05d1-91cd-4537-9016-09a0347f8605")
-		)
-		(fp_line
-			(start -2.45 1.35)
-			(end -2.45 -1.35)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "7f7b6020-8211-48d7-9ad2-02dc73128312")
+			(uuid "f664eb36-8af5-4030-8072-3a5095327de0")
 		)
 		(fp_line
 			(start 2.45 -1.35)
@@ -1666,6 +1715,16 @@
 			(uuid "36b22e92-75a7-49c2-97f0-37af015db4f4")
 		)
 		(fp_line
+			(start -2.45 -1.35)
+			(end 2.45 -1.35)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "fd9f05d1-91cd-4537-9016-09a0347f8605")
+		)
+		(fp_line
 			(start 2.45 1.35)
 			(end -2.45 1.35)
 			(stroke
@@ -1676,54 +1735,14 @@
 			(uuid "507107b2-8f40-42f6-b538-a817ca39f686")
 		)
 		(fp_line
-			(start -1.5 -1)
-			(end -1.5 1)
+			(start -2.45 1.35)
+			(end -2.45 -1.35)
 			(stroke
-				(width 0.1)
+				(width 0.05)
 				(type solid)
 			)
-			(layer "F.Fab")
-			(uuid "6ed4dbd7-ba9a-4907-be6f-9597ab59898f")
-		)
-		(fp_line
-			(start -1.5 -0.4)
-			(end -0.9 -1)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "cbc70d01-ac34-4fa3-b165-24cdcd4a8d3d")
-		)
-		(fp_line
-			(start -1.5 1)
-			(end 1.5 1)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "4f0aef2e-6721-4cb3-b507-8d9e3915fd46")
-		)
-		(fp_line
-			(start -0.55 -0.7)
-			(end 0.55 -0.7)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "e4798804-38ac-4a94-bf7e-ff5b885f15f6")
-		)
-		(fp_line
-			(start -0.55 0.7)
-			(end 0.55 0.7)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "85febc51-82e4-46d7-aa15-f7c780a9d95e")
+			(layer "F.CrtYd")
+			(uuid "7f7b6020-8211-48d7-9ad2-02dc73128312")
 		)
 		(fp_line
 			(start 1.5 -1)
@@ -1736,6 +1755,46 @@
 			(uuid "af11ec7f-8397-4a89-9063-5207138d7020")
 		)
 		(fp_line
+			(start -1.5 -1)
+			(end -1.5 1)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "6ed4dbd7-ba9a-4907-be6f-9597ab59898f")
+		)
+		(fp_line
+			(start -0.55 -0.7)
+			(end 0.55 -0.7)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "e4798804-38ac-4a94-bf7e-ff5b885f15f6")
+		)
+		(fp_line
+			(start -1.5 -0.4)
+			(end -0.9 -1)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "cbc70d01-ac34-4fa3-b165-24cdcd4a8d3d")
+		)
+		(fp_line
+			(start -0.55 0.7)
+			(end 0.55 0.7)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "85febc51-82e4-46d7-aa15-f7c780a9d95e")
+		)
+		(fp_line
 			(start 1.5 1)
 			(end 1.5 -1)
 			(stroke
@@ -1745,16 +1804,15 @@
 			(layer "F.Fab")
 			(uuid "27ad34c3-ef6d-45d5-ad9f-853db248aacb")
 		)
-		(fp_arc
-			(start -0.55 0.7)
-			(mid -1.25 0)
-			(end -0.55 -0.7)
+		(fp_line
+			(start -1.5 1)
+			(end 1.5 1)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "13e878f9-9f97-4920-95a1-3c2680dcbc05")
+			(uuid "4f0aef2e-6721-4cb3-b507-8d9e3915fd46")
 		)
 		(fp_arc
 			(start 0.55 -0.7)
@@ -1767,8 +1825,19 @@
 			(layer "F.Fab")
 			(uuid "bde2469d-8c39-46f7-8bbe-3db55d077a3a")
 		)
+		(fp_arc
+			(start -0.55 0.7)
+			(mid -1.25 0)
+			(end -0.55 -0.7)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "13e878f9-9f97-4920-95a1-3c2680dcbc05")
+		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(uuid "fee6e3cd-6b43-4bce-9ac9-d9ee92e0be98")
 			(effects
@@ -1779,19 +1848,19 @@
 			)
 		)
 		(pad "1" smd rect
-			(at -1.425 0)
+			(at -1.425 0 90)
 			(size 1.55 2.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 2 "GND")
+			(net 13 "Net-(D1-K)")
 			(pinfunction "K")
 			(pintype "passive")
 			(uuid "df56e092-1636-4852-9a93-940380c8bb45")
 		)
 		(pad "2" smd rect
-			(at 1.425 0)
+			(at 1.425 0 90)
 			(size 1.55 2.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 3 "Net-(D1-A)")
+			(net 11 "/OUT")
 			(pinfunction "A")
 			(pintype "passive")
 			(uuid "66ec8090-061f-4355-9ff6-b2a75e416e65")
@@ -1812,7 +1881,7 @@
 	(footprint "LED_SMD:LED_PLCC-2_3x2mm_KA"
 		(layer "F.Cu")
 		(uuid "28e52d43-fc74-485f-b478-56f0c22e61ce")
-		(at 175.425 58.16)
+		(at 188.575 60)
 		(descr "LED, SMD, PLCC-2, 3.0 x 2.0mm, orientation marker at cathode, https://optoelectronics.liteon.com/upload/download/DS22-2009-0099/LTW-M670ZVS-M5_0906.pdf")
 		(tags "LED PLCC-2 SMD")
 		(property "Reference" "D2"
@@ -1869,6 +1938,45 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "7a7f8292-04e3-4998-b18c-da76a4b62164")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3067be61-cdb8-4ab9-842a-c8c11a8ffe46")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Library" "led.lib"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "66a04ebc-6e9e-4d2f-8447-2b55b7e01f85")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Name" "LED_GENERAL"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e0642e01-7956-4267-8533-4c02f92ec6a7")
 			(effects
 				(font
 					(size 1 1)
@@ -2078,7 +2186,7 @@
 			(at -1.425 0)
 			(size 1.55 2.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 3 "Net-(D1-A)")
+			(net 11 "/OUT")
 			(pinfunction "K")
 			(pintype "passive")
 			(uuid "e1426bca-4762-442e-b428-d408301f8aac")
@@ -2087,7 +2195,7 @@
 			(at 1.425 0)
 			(size 1.55 2.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 4 "VCC")
+			(net 14 "Net-(D10-A)")
 			(pinfunction "A")
 			(pintype "passive")
 			(uuid "4fb28781-e3e6-4861-a7aa-8f864d4d6859")
@@ -2108,13 +2216,13 @@
 	(footprint "LED_SMD:LED_PLCC-2_3x2mm_KA"
 		(layer "F.Cu")
 		(uuid "584e90bc-b3e2-4d46-b306-108de3354b0c")
-		(at 187.495 62.08)
+		(at 141.85 75)
 		(descr "LED, SMD, PLCC-2, 3.0 x 2.0mm, orientation marker at cathode, https://optoelectronics.liteon.com/upload/download/DS22-2009-0099/LTW-M670ZVS-M5_0906.pdf")
 		(tags "LED PLCC-2 SMD")
 		(property "Reference" "D11"
 			(at 0 -2 0)
 			(layer "F.SilkS")
-			(uuid "4072ba6b-0cca-485a-9659-b7b9078dd0e6")
+			(uuid "8823931a-ea06-4f42-904c-4456bbf67704")
 			(effects
 				(font
 					(size 1 1)
@@ -2125,7 +2233,7 @@
 		(property "Value" "LED"
 			(at 0 2 0)
 			(layer "F.Fab")
-			(uuid "f557feaa-2c97-431f-b56c-121c294313e3")
+			(uuid "8edfb511-4c9b-467e-af3d-84dbc345d617")
 			(effects
 				(font
 					(size 1 1)
@@ -2138,7 +2246,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "29b3bcf9-d658-4836-9a3b-d15633356bf6")
+			(uuid "eb404e3d-6c1b-4add-a8e1-0c21292a63c3")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2151,7 +2259,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6e483346-b2ed-4a2f-9250-f88aff03b61e")
+			(uuid "dac90642-243b-4577-9568-8348c73264b4")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2165,6 +2273,45 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "1a52e060-0c7a-4f85-be36-087483908d88")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "39943a7b-18e5-4699-8580-efed82f9723f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Library" "led.lib"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4e4a915a-1759-4c6c-b6b0-f712c5282e98")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Name" "LED_GENERAL"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "47e38656-dc73-43f4-b8d5-cb6b9b114c69")
 			(effects
 				(font
 					(size 1 1)
@@ -2374,7 +2521,7 @@
 			(at -1.425 0)
 			(size 1.55 2.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 2 "GND")
+			(net 13 "Net-(D1-K)")
 			(pinfunction "K")
 			(pintype "passive")
 			(uuid "b41211ab-e7d1-49bf-b542-325674f991d7")
@@ -2383,7 +2530,7 @@
 			(at 1.425 0)
 			(size 1.55 2.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 3 "Net-(D1-A)")
+			(net 11 "/OUT")
 			(pinfunction "A")
 			(pintype "passive")
 			(uuid "5468f16c-b17b-4a5b-a4d0-9deab7db83ee")
@@ -2404,7 +2551,7 @@
 	(footprint "LED_SMD:LED_PLCC-2_3x2mm_KA"
 		(layer "F.Cu")
 		(uuid "58d34650-a04d-4227-9313-d9ad4d21eb81")
-		(at 181.46 58.16)
+		(at 183.925 115.5)
 		(descr "LED, SMD, PLCC-2, 3.0 x 2.0mm, orientation marker at cathode, https://optoelectronics.liteon.com/upload/download/DS22-2009-0099/LTW-M670ZVS-M5_0906.pdf")
 		(tags "LED PLCC-2 SMD")
 		(property "Reference" "D6"
@@ -2461,6 +2608,45 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "8d3d2bf7-5bbc-4ea8-8de7-c188d448bcb4")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3342a116-a298-4611-8517-39e0eebb3e34")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Library" "led.lib"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "70c517b5-33f0-48d0-a79f-6ce977191a37")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Name" "LED_GENERAL"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0c2dac6f-71fe-4224-a881-a34f86a3a895")
 			(effects
 				(font
 					(size 1 1)
@@ -2679,7 +2865,7 @@
 			(at 1.425 0)
 			(size 1.55 2.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 4 "VCC")
+			(net 14 "Net-(D10-A)")
 			(pinfunction "A")
 			(pintype "passive")
 			(uuid "021ce845-31f7-4b58-858d-705ca0f0745d")
@@ -2700,13 +2886,13 @@
 	(footprint "LED_SMD:LED_PLCC-2_3x2mm_KA"
 		(layer "F.Cu")
 		(uuid "685df216-97da-4d9d-a3d5-9275a9b79cc5")
-		(at 187.495 58.16)
+		(at 143.575 90)
 		(descr "LED, SMD, PLCC-2, 3.0 x 2.0mm, orientation marker at cathode, https://optoelectronics.liteon.com/upload/download/DS22-2009-0099/LTW-M670ZVS-M5_0906.pdf")
 		(tags "LED PLCC-2 SMD")
 		(property "Reference" "D10"
 			(at 0 -2 0)
 			(layer "F.SilkS")
-			(uuid "c18191f7-8be7-4683-bf90-dd79582e18fb")
+			(uuid "27777e8b-c7a8-4f1d-a1cf-86ad9ede9e1d")
 			(effects
 				(font
 					(size 1 1)
@@ -2717,7 +2903,7 @@
 		(property "Value" "LED"
 			(at 0 2 0)
 			(layer "F.Fab")
-			(uuid "83b93da4-550c-47f7-a34f-b2db2ff33843")
+			(uuid "89e335b0-6f58-47b7-a3ae-72a5544cbfd8")
 			(effects
 				(font
 					(size 1 1)
@@ -2730,7 +2916,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "b4d382f5-87f6-4282-b079-4f3ca9169fd6")
+			(uuid "75271676-a157-4159-a1c1-ae3ac0e8338a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2743,7 +2929,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "2177389b-f7eb-4cb9-b051-25ec7aa32e03")
+			(uuid "0e791828-e932-4046-8bdd-6de93aa58c7a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2757,6 +2943,45 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "4bca0665-86c2-4094-8ff6-7255f8930977")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "67c495a4-fe62-4704-b278-2d5649dcee65")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Library" "led.lib"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "eddaf8a1-2bb1-4112-943d-ff06a463c8d8")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Name" "LED_GENERAL"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "da057355-80d4-4bb6-b530-efde219e4231")
 			(effects
 				(font
 					(size 1 1)
@@ -2975,7 +3200,7 @@
 			(at 1.425 0)
 			(size 1.55 2.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 4 "VCC")
+			(net 14 "Net-(D10-A)")
 			(pinfunction "A")
 			(pintype "passive")
 			(uuid "8187bb31-a9b3-4521-8aea-abdc9991622c")
@@ -2996,13 +3221,13 @@
 	(footprint "LED_SMD:LED_PLCC-2_3x2mm_KA"
 		(layer "F.Cu")
 		(uuid "7d0f1bf8-4872-4962-baf8-1192045284c2")
-		(at 181.46 62.08)
+		(at 170 125.425 -90)
 		(descr "LED, SMD, PLCC-2, 3.0 x 2.0mm, orientation marker at cathode, https://optoelectronics.liteon.com/upload/download/DS22-2009-0099/LTW-M670ZVS-M5_0906.pdf")
 		(tags "LED PLCC-2 SMD")
 		(property "Reference" "D7"
-			(at 0 -2 0)
+			(at 0 -2 90)
 			(layer "F.SilkS")
-			(uuid "5d272eb9-f72b-440a-a5bc-098c267a8e98")
+			(uuid "089aa2b4-0568-41f9-8623-baa9bd2ed5da")
 			(effects
 				(font
 					(size 1 1)
@@ -3011,9 +3236,9 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 0 2 0)
+			(at 0 2 90)
 			(layer "F.Fab")
-			(uuid "d86b0aa0-57a8-459a-abc7-c1b03ca11acf")
+			(uuid "9b1b4002-3199-4a91-bb5f-4cc5c4e367f5")
 			(effects
 				(font
 					(size 1 1)
@@ -3022,11 +3247,11 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 0 0 0)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6c317e67-2321-47a0-809d-097bf328f3bc")
+			(uuid "89d7ae1f-b7d5-4697-870e-6629a4c989ab")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3035,11 +3260,11 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 0 0 0)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "80f5db7f-a53d-4ab1-9458-5c5c162a767e")
+			(uuid "7787a30e-0776-4822-a6b2-3ec0a466d0d5")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3048,11 +3273,50 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 0 0 0)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "b57c74f9-0ab6-4dc8-9c22-0b666c363bca")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "91bd01fb-0c62-4318-aea5-658ae2691718")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Library" "led.lib"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4b45c6d0-3276-47ee-8b4d-49c759552d52")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Name" "LED_GENERAL"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "611451ad-7329-4042-b485-9dac7f06f44c")
 			(effects
 				(font
 					(size 1 1)
@@ -3066,16 +3330,6 @@
 		(sheetfile "projekt.kicad_sch")
 		(attr smd)
 		(fp_line
-			(start -2.5 -1.4)
-			(end -2.5 1.4)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "5469f6dd-eaa5-4e7f-a24c-b49de47ea484")
-		)
-		(fp_line
 			(start -2.5 1.4)
 			(end 2.2 1.4)
 			(stroke
@@ -3084,16 +3338,6 @@
 			)
 			(layer "F.SilkS")
 			(uuid "9c2d6807-81fe-450a-bd80-2e4e0b610859")
-		)
-		(fp_line
-			(start 0.35 -1.1)
-			(end -0.35 -1.1)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "d2589927-e7b4-477f-8d00-bd921b4086d1")
 		)
 		(fp_line
 			(start 0.35 1.1)
@@ -3106,6 +3350,26 @@
 			(uuid "b5c9608f-893f-4ef4-bebb-04edf9d20726")
 		)
 		(fp_line
+			(start 0.35 -1.1)
+			(end -0.35 -1.1)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "d2589927-e7b4-477f-8d00-bd921b4086d1")
+		)
+		(fp_line
+			(start -2.5 -1.4)
+			(end -2.5 1.4)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "5469f6dd-eaa5-4e7f-a24c-b49de47ea484")
+		)
+		(fp_line
 			(start 2.2 -1.4)
 			(end -2.5 -1.4)
 			(stroke
@@ -3114,16 +3378,6 @@
 			)
 			(layer "F.SilkS")
 			(uuid "a12f6aff-e838-4cbc-8e10-913c4ee3268f")
-		)
-		(fp_line
-			(start -2.45 -1.35)
-			(end 2.45 -1.35)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "6f906787-616a-4387-b13e-c9f9b4af0666")
 		)
 		(fp_line
 			(start -2.45 1.35)
@@ -3136,16 +3390,6 @@
 			(uuid "d46e3ea6-b7b0-4555-8c7d-f9dd7ed16a4d")
 		)
 		(fp_line
-			(start 2.45 -1.35)
-			(end 2.45 1.35)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "269344b7-1bb8-48c0-89b2-99552d7b0483")
-		)
-		(fp_line
 			(start 2.45 1.35)
 			(end -2.45 1.35)
 			(stroke
@@ -3156,24 +3400,24 @@
 			(uuid "dbdc6431-250a-4ac0-a3cd-6e1d929c687b")
 		)
 		(fp_line
-			(start -1.5 -1)
-			(end -1.5 1)
+			(start -2.45 -1.35)
+			(end 2.45 -1.35)
 			(stroke
-				(width 0.1)
+				(width 0.05)
 				(type solid)
 			)
-			(layer "F.Fab")
-			(uuid "7a6dc7a4-07fc-403c-9c70-3f1e7b85e32e")
+			(layer "F.CrtYd")
+			(uuid "6f906787-616a-4387-b13e-c9f9b4af0666")
 		)
 		(fp_line
-			(start -1.5 -0.4)
-			(end -0.9 -1)
+			(start 2.45 -1.35)
+			(end 2.45 1.35)
 			(stroke
-				(width 0.1)
+				(width 0.05)
 				(type solid)
 			)
-			(layer "F.Fab")
-			(uuid "3604c33a-a7f0-4551-afac-58a5f6ecd303")
+			(layer "F.CrtYd")
+			(uuid "269344b7-1bb8-48c0-89b2-99552d7b0483")
 		)
 		(fp_line
 			(start -1.5 1)
@@ -3186,14 +3430,14 @@
 			(uuid "769929a4-323e-4745-92e1-8728a3951059")
 		)
 		(fp_line
-			(start -0.55 -0.7)
-			(end 0.55 -0.7)
+			(start 1.5 1)
+			(end 1.5 -1)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "3ee63c60-6e3c-4f5f-b101-768c7a2925df")
+			(uuid "30ed0a56-beea-4a6c-b64c-b57b9db18340")
 		)
 		(fp_line
 			(start -0.55 0.7)
@@ -3206,6 +3450,36 @@
 			(uuid "4009db7e-abf9-4764-8784-033e585d0b42")
 		)
 		(fp_line
+			(start -1.5 -0.4)
+			(end -0.9 -1)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "3604c33a-a7f0-4551-afac-58a5f6ecd303")
+		)
+		(fp_line
+			(start -0.55 -0.7)
+			(end 0.55 -0.7)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "3ee63c60-6e3c-4f5f-b101-768c7a2925df")
+		)
+		(fp_line
+			(start -1.5 -1)
+			(end -1.5 1)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "7a6dc7a4-07fc-403c-9c70-3f1e7b85e32e")
+		)
+		(fp_line
 			(start 1.5 -1)
 			(end -1.5 -1)
 			(stroke
@@ -3214,16 +3488,6 @@
 			)
 			(layer "F.Fab")
 			(uuid "c6fd8959-5caa-4443-8e89-18b9a65967f2")
-		)
-		(fp_line
-			(start 1.5 1)
-			(end 1.5 -1)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "30ed0a56-beea-4a6c-b64c-b57b9db18340")
 		)
 		(fp_arc
 			(start -0.55 0.7)
@@ -3248,7 +3512,7 @@
 			(uuid "d334d944-267d-4489-9459-a262785a52cf")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(uuid "e85e5cb6-7ac7-4741-8c9e-9207bc57c664")
 			(effects
@@ -3259,16 +3523,16 @@
 			)
 		)
 		(pad "1" smd rect
-			(at -1.425 0)
+			(at -1.425 0 270)
 			(size 1.55 2.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 2 "GND")
+			(net 13 "Net-(D1-K)")
 			(pinfunction "K")
 			(pintype "passive")
 			(uuid "e47c13c7-e632-40ee-86e2-3c0c3db91e0a")
 		)
 		(pad "2" smd rect
-			(at 1.425 0)
+			(at 1.425 0 270)
 			(size 1.55 2.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 7 "Net-(D7-A)")
@@ -3289,10 +3553,173 @@
 			)
 		)
 	)
+	(footprint "Capacitor_THT:C_Disc_D4.3mm_W1.9mm_P5.00mm"
+		(layer "F.Cu")
+		(uuid "7e62f999-775b-4c04-b0c1-c44dcedd6e6f")
+		(at 181 84)
+		(descr "C, Disc series, Radial, pin pitch=5.00mm, diameter*width=4.3*1.9mm^2, Capacitor, http://www.vishay.com/docs/45233/krseries.pdf")
+		(tags "C Disc series Radial pin pitch 5.00mm diameter 4.3mm width 1.9mm Capacitor")
+		(property "Reference" "C2"
+			(at 2.5 -2.2 0)
+			(layer "F.SilkS")
+			(uuid "eb581dc1-5290-4ab9-b41c-6b0c898e9780")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "10n"
+			(at 2.5 2.2 0)
+			(layer "F.Fab")
+			(uuid "d9cacf82-4f03-40d7-badb-0e671291e58b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5cf02056-2956-406f-b620-a81942efe1e2")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "dc65db69-bec5-4a72-9849-69cdaf2eac52")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "C_*")
+		(path "/3650c951-8e78-4761-9cc0-839baf0890fa")
+		(sheetname "/")
+		(sheetfile "projekt.kicad_sch")
+		(attr through_hole)
+		(fp_line
+			(start 0.23 -1.07)
+			(end 4.77 -1.07)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "01905256-d6f7-4aac-a6b7-0b53a4f54576")
+		)
+		(fp_line
+			(start 0.23 -1.014)
+			(end 0.23 -1.07)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "74474dc2-67ca-4fbe-a7ea-38c37667a454")
+		)
+		(fp_line
+			(start 4.77 1.014)
+			(end 4.77 1.07)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "9c2e31f4-2fa3-4db6-97c0-15d516503459")
+		)
+		(fp_line
+			(start 4.77 1.07)
+			(end 0.23 1.07)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "fbea46c0-c462-45a6-8b63-b178f2874b45")
+		)
+		(fp_rect
+			(start -1.05 -1.2)
+			(end 6.05 1.2)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "6b7c0ad7-25ab-4247-9a1e-0213bc6e1814")
+		)
+		(fp_rect
+			(start 0.35 -0.95)
+			(end 4.65 0.95)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "ab4094c7-2984-41c2-97d9-ea6a8e3220b3")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 2.5 0 0)
+			(layer "F.Fab")
+			(uuid "3a5890da-e3a3-4bd7-9003-e63cc94b6821")
+			(effects
+				(font
+					(size 0.86 0.86)
+					(thickness 0.129)
+				)
+			)
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 12 "Net-(U1-CV)")
+			(pintype "passive")
+			(uuid "40840f97-c823-431f-b48a-9614cb791ef2")
+		)
+		(pad "2" thru_hole circle
+			(at 5 0)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 2 "GND")
+			(pintype "passive")
+			(uuid "1ddc4934-651f-4844-bb26-3b70383b2e6c")
+		)
+		(embedded_fonts no)
+		(model "${KICAD9_3DMODEL_DIR}/Capacitor_THT.3dshapes/C_Disc_D4.3mm_W1.9mm_P5.00mm.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
 	(footprint "LED_SMD:LED_PLCC-2_3x2mm_KA"
 		(layer "F.Cu")
 		(uuid "83b711da-9fec-4a15-9c47-bd2ad59d2d95")
-		(at 187.495 66)
+		(at 151.075 60)
 		(descr "LED, SMD, PLCC-2, 3.0 x 2.0mm, orientation marker at cathode, https://optoelectronics.liteon.com/upload/download/DS22-2009-0099/LTW-M670ZVS-M5_0906.pdf")
 		(tags "LED PLCC-2 SMD")
 		(property "Reference" "D12"
@@ -3349,6 +3776,45 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "fce6e022-a9f4-4181-80ac-ee6656e933b4")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3a0b11ff-70a3-46c5-980f-0f0ff79fddd9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Library" "led.lib"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8f572f31-b61f-4365-9cb2-e71d743e259f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Name" "LED_GENERAL"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "374e3553-38fc-48ec-b1a4-826a09a85284")
 			(effects
 				(font
 					(size 1 1)
@@ -3558,7 +4024,7 @@
 			(at -1.425 0)
 			(size 1.55 2.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 3 "Net-(D1-A)")
+			(net 11 "/OUT")
 			(pinfunction "K")
 			(pintype "passive")
 			(uuid "9dae3215-51a3-4ea8-81f5-104e7805614c")
@@ -3567,7 +4033,7 @@
 			(at 1.425 0)
 			(size 1.55 2.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 4 "VCC")
+			(net 14 "Net-(D10-A)")
 			(pinfunction "A")
 			(pintype "passive")
 			(uuid "810f2809-c5bb-4f2f-aebf-26573e110d4d")
@@ -3588,7 +4054,7 @@
 	(footprint "LED_SMD:LED_PLCC-2_3x2mm_KA"
 		(layer "F.Cu")
 		(uuid "86f60a6b-1286-44fa-905c-8742da253029")
-		(at 175.425 62.08)
+		(at 198.925 67.5)
 		(descr "LED, SMD, PLCC-2, 3.0 x 2.0mm, orientation marker at cathode, https://optoelectronics.liteon.com/upload/download/DS22-2009-0099/LTW-M670ZVS-M5_0906.pdf")
 		(tags "LED PLCC-2 SMD")
 		(property "Reference" "D3"
@@ -3645,6 +4111,45 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "589c58d9-0db0-4fa1-8682-ae2efd3c8337")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "05023c9a-c0d0-4b8e-bfb2-126a9ecf62bd")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Library" "led.lib"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9a5dbc79-29f2-4bba-9aa2-87cc8e0bf825")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Name" "LED_GENERAL"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4c2a8da7-d76e-4415-ad3b-d32062a6308f")
 			(effects
 				(font
 					(size 1 1)
@@ -3854,7 +4359,7 @@
 			(at -1.425 0)
 			(size 1.55 2.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 2 "GND")
+			(net 13 "Net-(D1-K)")
 			(pinfunction "K")
 			(pintype "passive")
 			(uuid "513bba86-ae91-4ac2-b75f-609504f196c1")
@@ -3884,11 +4389,11 @@
 	(footprint "battery:HARWIN_S8421-45R"
 		(layer "F.Cu")
 		(uuid "b178c16b-8b3f-4c71-975a-19f5a86fb09d")
-		(at 146.48075 99 90)
+		(at 168.98075 100 90)
 		(property "Reference" "J1"
 			(at -6.955 -13.035 90)
 			(layer "F.SilkS")
-			(uuid "dcbb5b8f-c712-4b79-b808-89f405d53d04")
+			(uuid "150a8f59-a58b-445d-838f-299289ecf6cb")
 			(effects
 				(font
 					(size 1 1)
@@ -3899,7 +4404,7 @@
 		(property "Value" "S8421-45R"
 			(at 0.03 16.285 90)
 			(layer "F.Fab")
-			(uuid "02e34458-295f-44f5-a666-2772945cf92a")
+			(uuid "a721933c-7293-4c84-a7d5-9ea0d936a92c")
 			(effects
 				(font
 					(size 1 1)
@@ -3911,7 +4416,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "3dd2f8dc-3483-4cc6-bb1d-14a0d8330908")
+			(uuid "5223aa67-7593-4bd3-933c-1a64841d7b75")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3923,7 +4428,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "4c73fab6-59ac-46e4-a7cb-383483ce6081")
+			(uuid "ce9cddb9-ff53-4458-bbe4-e0536d310153")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4630,7 +5135,7 @@
 	(footprint "LED_SMD:LED_PLCC-2_3x2mm_KA"
 		(layer "F.Cu")
 		(uuid "b18b1f50-bb7f-453a-b6a9-446ae1ab0b02")
-		(at 181.46 54.24)
+		(at 196.425 96)
 		(descr "LED, SMD, PLCC-2, 3.0 x 2.0mm, orientation marker at cathode, https://optoelectronics.liteon.com/upload/download/DS22-2009-0099/LTW-M670ZVS-M5_0906.pdf")
 		(tags "LED PLCC-2 SMD")
 		(property "Reference" "D5"
@@ -4687,6 +5192,45 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "0f48055c-eec0-4bd3-a20f-c1d2cf399035")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f04a4f68-99a3-495a-9683-24bb8372766c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Library" "led.lib"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2ec2548c-5c68-43cb-8c2c-a442577f1c54")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Name" "LED_GENERAL"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "90951837-8e11-4d98-8b9d-27e85cdb0674")
 			(effects
 				(font
 					(size 1 1)
@@ -4896,7 +5440,7 @@
 			(at -1.425 0)
 			(size 1.55 2.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 2 "GND")
+			(net 13 "Net-(D1-K)")
 			(pinfunction "K")
 			(pintype "passive")
 			(uuid "3a80cf6a-5db0-4733-a35a-d51cb08c11b9")
@@ -4923,10 +5467,213 @@
 			)
 		)
 	)
+	(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
+		(layer "F.Cu")
+		(uuid "b6fafe2e-c466-4dd2-89e5-f6590bfdb4c6")
+		(at 174.805 60)
+		(descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=7.62mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
+		(tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 7.62mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
+		(property "Reference" "R3"
+			(at 3.81 -2.37 0)
+			(layer "F.SilkS")
+			(uuid "8961359d-66c9-4c1d-a6f9-0c37f7d11358")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "100"
+			(at 3.81 2.37 0)
+			(layer "F.Fab")
+			(uuid "562b905a-1edb-45fa-a246-6bdf9b276b12")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e5728e6e-17fe-42c3-ad7b-e710f543f057")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "32bde22f-fee0-43bf-b6d7-4e6051228d5b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "R_*")
+		(path "/9db2014b-c333-4a59-a650-9a1e01acd7f9")
+		(sheetname "/")
+		(sheetfile "projekt.kicad_sch")
+		(attr through_hole)
+		(fp_line
+			(start 0.54 -1.37)
+			(end 7.08 -1.37)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "13e9a082-43e9-4910-b486-6cf4712bb726")
+		)
+		(fp_line
+			(start 0.54 -1.04)
+			(end 0.54 -1.37)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "9bb97b86-5099-43b1-b62c-c3e5c4b68bb0")
+		)
+		(fp_line
+			(start 0.54 1.04)
+			(end 0.54 1.37)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "25a734e4-ac6c-4233-ac86-f46860ff0a01")
+		)
+		(fp_line
+			(start 0.54 1.37)
+			(end 7.08 1.37)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "ca23d7ae-f1d8-4b9a-939c-92241c945cc0")
+		)
+		(fp_line
+			(start 7.08 -1.37)
+			(end 7.08 -1.04)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "be44278e-a6f6-43a5-92d7-9c6c5fdcc0b2")
+		)
+		(fp_line
+			(start 7.08 1.37)
+			(end 7.08 1.04)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "57391ae2-f8cb-4968-bfd1-9dd027d62028")
+		)
+		(fp_rect
+			(start -1.05 -1.5)
+			(end 8.67 1.5)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "12837c49-fae5-4d59-bc14-5243e93ebcf8")
+		)
+		(fp_line
+			(start 0 0)
+			(end 0.66 0)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "72e1ec68-21d6-4584-a58b-6475c40b36ba")
+		)
+		(fp_line
+			(start 7.62 0)
+			(end 6.96 0)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "310d734f-0dd0-4422-908f-141ed157cff0")
+		)
+		(fp_rect
+			(start 0.66 -1.25)
+			(end 6.96 1.25)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "9dd6fe94-eab8-480c-92eb-41d71229cde1")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 3.81 0 0)
+			(layer "F.Fab")
+			(uuid "8d0e42f1-e03c-45d6-92f3-fad90d93e49c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 4 "VCC")
+			(pintype "passive")
+			(uuid "a8d6bb5c-5d4e-46b2-8c31-d438ab259190")
+		)
+		(pad "2" thru_hole circle
+			(at 7.62 0)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 14 "Net-(D10-A)")
+			(pintype "passive")
+			(uuid "fdf66377-280d-44d8-b690-2e8b42953b38")
+		)
+		(embedded_fonts no)
+		(model "${KICAD9_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
 	(footprint "LED_SMD:LED_PLCC-2_3x2mm_KA"
 		(layer "F.Cu")
 		(uuid "bea124d7-eeb5-43f0-a003-054af87d10fe")
-		(at 175.425 66)
+		(at 201.425 77.071067)
 		(descr "LED, SMD, PLCC-2, 3.0 x 2.0mm, orientation marker at cathode, https://optoelectronics.liteon.com/upload/download/DS22-2009-0099/LTW-M670ZVS-M5_0906.pdf")
 		(tags "LED PLCC-2 SMD")
 		(property "Reference" "D4"
@@ -4983,6 +5730,45 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "dd3fee5f-f4c4-4e9a-8298-2858758f8731")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3646e6fb-8560-403c-837f-7d14fe7a6cab")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Library" "led.lib"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6b94dac4-775c-4f47-b393-7bb39cf70d7f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Name" "LED_GENERAL"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cd3d640b-97cb-4135-9a0d-eb29066503ca")
 			(effects
 				(font
 					(size 1 1)
@@ -5201,7 +5987,7 @@
 			(at 1.425 0)
 			(size 1.55 2.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 4 "VCC")
+			(net 14 "Net-(D10-A)")
 			(pinfunction "A")
 			(pintype "passive")
 			(uuid "c647a6ee-77eb-4a12-b79e-b61cd5a1cf63")
@@ -5222,7 +6008,7 @@
 	(footprint "Package_DIP:DIP-8_W7.62mm"
 		(layer "F.Cu")
 		(uuid "c78c68bd-e9f4-4583-bff2-dfe52d38b62f")
-		(at 152.5 74.88 -90)
+		(at 174 77.195 -90)
 		(descr "8-lead though-hole mounted DIP package, row spacing 7.62mm (300 mils)")
 		(tags "THT DIP DIL PDIP 2.54mm 7.62mm 300mil")
 		(property "Reference" "U1"
@@ -5512,7 +6298,7 @@
 			(drill 0.8)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 2 "GND")
+			(net 12 "Net-(U1-CV)")
 			(pinfunction "CV")
 			(pintype "input")
 			(uuid "197353ce-aa86-4b8d-aebb-2d7f4e9acc21")
@@ -5566,7 +6352,7 @@
 	(footprint "Button_Switch_THT:SW_PUSH_6mm"
 		(layer "F.Cu")
 		(uuid "cceea64e-e70a-47d5-96bd-1c4a2cd89384")
-		(at 149.5 113.5 -90)
+		(at 172.25 113 -90)
 		(descr "Generic 6mm SW tactile push button")
 		(tags "tact sw push 6mm")
 		(property "Reference" "SW1"
@@ -5913,7 +6699,7 @@
 	(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 		(layer "F.Cu")
 		(uuid "cfbf7fbe-9e8a-48aa-8e6c-4c06dba5a9c3")
-		(at 159.5 82 90)
+		(at 188.925 79.31 90)
 		(descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=7.62mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 7.62mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
 		(property "Reference" "R2"
@@ -6115,8 +6901,211 @@
 	)
 	(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 		(layer "F.Cu")
+		(uuid "de4ec488-117f-4a39-93dd-1a6f784466c0")
+		(at 175.305 66.5)
+		(descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=7.62mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
+		(tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 7.62mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
+		(property "Reference" "R4"
+			(at 3.81 -2.37 0)
+			(layer "F.SilkS")
+			(uuid "0a461408-8c85-487e-aaad-546179e9712a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "100"
+			(at 3.81 2.37 0)
+			(layer "F.Fab")
+			(uuid "9f9967e4-5732-4574-9a66-559582544eb9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bfff39f0-2c68-426b-ab5c-96abd1c892bf")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3215055e-768c-4392-9cfe-cc128d5fd9ee")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "R_*")
+		(path "/2a836aa1-9e68-4885-bf57-273715a92a58")
+		(sheetname "/")
+		(sheetfile "projekt.kicad_sch")
+		(attr through_hole)
+		(fp_line
+			(start 0.54 -1.37)
+			(end 7.08 -1.37)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "15e9e08d-be23-4512-817e-562a5384aa7c")
+		)
+		(fp_line
+			(start 0.54 -1.04)
+			(end 0.54 -1.37)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "72556e1b-d85b-4130-b0b4-a6aabcdec92f")
+		)
+		(fp_line
+			(start 0.54 1.04)
+			(end 0.54 1.37)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "fc7d9eb1-6aed-4313-9548-609288a0d39c")
+		)
+		(fp_line
+			(start 0.54 1.37)
+			(end 7.08 1.37)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "7dd3ebab-ac7a-4382-939f-621d77d14de1")
+		)
+		(fp_line
+			(start 7.08 -1.37)
+			(end 7.08 -1.04)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "4ce4c086-33d0-4761-894e-8fdf037e5023")
+		)
+		(fp_line
+			(start 7.08 1.37)
+			(end 7.08 1.04)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "fb723ce9-5c04-4934-a149-4c22c15b13ab")
+		)
+		(fp_rect
+			(start -1.05 -1.5)
+			(end 8.67 1.5)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "8024004e-7cef-4544-ae7c-ad57fb79991a")
+		)
+		(fp_line
+			(start 0 0)
+			(end 0.66 0)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "027d900e-0b8f-42ed-93a2-1d12205dd43d")
+		)
+		(fp_line
+			(start 7.62 0)
+			(end 6.96 0)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "6cff2282-4255-4069-844a-e2388eb6d984")
+		)
+		(fp_rect
+			(start 0.66 -1.25)
+			(end 6.96 1.25)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "1efb33c2-f8eb-41ed-950e-d5237daf67fe")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 3.81 0 0)
+			(layer "F.Fab")
+			(uuid "e24d1a44-75c9-46f4-9607-bb3b1b31da8b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 13 "Net-(D1-K)")
+			(pintype "passive")
+			(uuid "ac7c0dfd-25b4-40cd-88da-7aa30c851e9d")
+		)
+		(pad "2" thru_hole circle
+			(at 7.62 0)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 2 "GND")
+			(pintype "passive")
+			(uuid "a8410875-68c8-4d06-ac25-9a6cfbd9c027")
+		)
+		(embedded_fonts no)
+		(model "${KICAD9_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
+		(layer "F.Cu")
 		(uuid "dfb59104-1966-48c7-8618-3f971c2cc034")
-		(at 175.5 96.55)
+		(at 191.925 86.5)
 		(descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=7.62mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 7.62mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
 		(property "Reference" "R3"
@@ -6166,7 +7155,6 @@
 			)
 		)
 		(property ki_fp_filters "R_*")
-		(path "/8f0dbfed-852f-4761-a667-4b55db146d4a")
 		(sheetname "/")
 		(sheetfile "projekt.kicad_sch")
 		(attr through_hole)
@@ -6319,7 +7307,7 @@
 	(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 		(layer "F.Cu")
 		(uuid "ed776f47-3c68-4427-a776-e545a15bcd5e")
-		(at 150 71)
+		(at 174.925 72.5)
 		(descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=7.62mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 7.62mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
 		(property "Reference" "R1"
@@ -6522,11 +7510,11 @@
 	(footprint "LED_SMD:LED_PLCC-2_3x2mm_KA"
 		(layer "F.Cu")
 		(uuid "f7769a4d-0d30-48e4-8a1a-c67d18d3a447")
-		(at 187.495 54.24)
+		(at 150 106.425 90)
 		(descr "LED, SMD, PLCC-2, 3.0 x 2.0mm, orientation marker at cathode, https://optoelectronics.liteon.com/upload/download/DS22-2009-0099/LTW-M670ZVS-M5_0906.pdf")
 		(tags "LED PLCC-2 SMD")
 		(property "Reference" "D9"
-			(at 0 -2 0)
+			(at 0 -2 90)
 			(layer "F.SilkS")
 			(uuid "3c8e4115-dc82-4ad5-bb76-6466230a9f0e")
 			(effects
@@ -6537,7 +7525,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 0 2 0)
+			(at 0 2 90)
 			(layer "F.Fab")
 			(uuid "3a51a5d2-3365-45d8-befd-3ab568d079f6")
 			(effects
@@ -6548,7 +7536,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 0 0 0)
+			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -6561,7 +7549,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 0 0 0)
+			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -6574,11 +7562,50 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 0 0 0)
+			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "53f7f729-d020-46ee-9de8-2bac316b779c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "449d1874-0f05-488c-8b83-4bcca376261c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Library" "led.lib"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7aad23b9-46d3-4600-a5ac-1d694a3dcae6")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Name" "LED_GENERAL"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "27e34163-437c-465f-96a4-c7207182c227")
 			(effects
 				(font
 					(size 1 1)
@@ -6592,6 +7619,16 @@
 		(sheetfile "projekt.kicad_sch")
 		(attr smd)
 		(fp_line
+			(start 2.2 -1.4)
+			(end -2.5 -1.4)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "69ed7c61-dee5-4c2f-9d77-acb29b61709b")
+		)
+		(fp_line
 			(start -2.5 -1.4)
 			(end -2.5 1.4)
 			(stroke
@@ -6600,16 +7637,6 @@
 			)
 			(layer "F.SilkS")
 			(uuid "c0a38f5f-a971-4161-8459-d883a59a909a")
-		)
-		(fp_line
-			(start -2.5 1.4)
-			(end 2.2 1.4)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "f537e0b2-77bb-4127-b15c-6dfe83a1d0f8")
 		)
 		(fp_line
 			(start 0.35 -1.1)
@@ -6632,34 +7659,14 @@
 			(uuid "44a0773f-e568-4b08-bfcc-0008aa45ba77")
 		)
 		(fp_line
-			(start 2.2 -1.4)
-			(end -2.5 -1.4)
+			(start -2.5 1.4)
+			(end 2.2 1.4)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "69ed7c61-dee5-4c2f-9d77-acb29b61709b")
-		)
-		(fp_line
-			(start -2.45 -1.35)
-			(end 2.45 -1.35)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "8c7d42b9-524e-4928-b7d5-943b59d6ae5d")
-		)
-		(fp_line
-			(start -2.45 1.35)
-			(end -2.45 -1.35)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "902433bf-0891-47de-b714-4c1dae3920ef")
+			(uuid "f537e0b2-77bb-4127-b15c-6dfe83a1d0f8")
 		)
 		(fp_line
 			(start 2.45 -1.35)
@@ -6672,6 +7679,16 @@
 			(uuid "b23f670b-acaa-40f4-a8fe-e08cbc9f199f")
 		)
 		(fp_line
+			(start -2.45 -1.35)
+			(end 2.45 -1.35)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "8c7d42b9-524e-4928-b7d5-943b59d6ae5d")
+		)
+		(fp_line
 			(start 2.45 1.35)
 			(end -2.45 1.35)
 			(stroke
@@ -6682,54 +7699,14 @@
 			(uuid "19369dcb-51d4-419b-9860-505a3fefad38")
 		)
 		(fp_line
-			(start -1.5 -1)
-			(end -1.5 1)
+			(start -2.45 1.35)
+			(end -2.45 -1.35)
 			(stroke
-				(width 0.1)
+				(width 0.05)
 				(type solid)
 			)
-			(layer "F.Fab")
-			(uuid "1a828854-ce19-493d-90a0-c79606144845")
-		)
-		(fp_line
-			(start -1.5 -0.4)
-			(end -0.9 -1)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "e5ca6fad-6c2c-462d-af98-674f4780845a")
-		)
-		(fp_line
-			(start -1.5 1)
-			(end 1.5 1)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "3e0324aa-6fe1-41a9-a0bd-62bd04f2a89e")
-		)
-		(fp_line
-			(start -0.55 -0.7)
-			(end 0.55 -0.7)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "5809b311-cb10-434c-8e33-088f1f01f366")
-		)
-		(fp_line
-			(start -0.55 0.7)
-			(end 0.55 0.7)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "d717c480-0faa-4fa8-8d5e-d5d802f8dbdf")
+			(layer "F.CrtYd")
+			(uuid "902433bf-0891-47de-b714-4c1dae3920ef")
 		)
 		(fp_line
 			(start 1.5 -1)
@@ -6742,6 +7719,46 @@
 			(uuid "28603993-1927-44b1-b823-1df6dede3f2f")
 		)
 		(fp_line
+			(start -1.5 -1)
+			(end -1.5 1)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "1a828854-ce19-493d-90a0-c79606144845")
+		)
+		(fp_line
+			(start -0.55 -0.7)
+			(end 0.55 -0.7)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "5809b311-cb10-434c-8e33-088f1f01f366")
+		)
+		(fp_line
+			(start -1.5 -0.4)
+			(end -0.9 -1)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "e5ca6fad-6c2c-462d-af98-674f4780845a")
+		)
+		(fp_line
+			(start -0.55 0.7)
+			(end 0.55 0.7)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "d717c480-0faa-4fa8-8d5e-d5d802f8dbdf")
+		)
+		(fp_line
 			(start 1.5 1)
 			(end 1.5 -1)
 			(stroke
@@ -6751,16 +7768,15 @@
 			(layer "F.Fab")
 			(uuid "644302fd-3779-43d4-8221-65e5200369b1")
 		)
-		(fp_arc
-			(start -0.55 0.7)
-			(mid -1.25 0)
-			(end -0.55 -0.7)
+		(fp_line
+			(start -1.5 1)
+			(end 1.5 1)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "6ed8943a-5e14-455a-a35d-1d40f305b6c2")
+			(uuid "3e0324aa-6fe1-41a9-a0bd-62bd04f2a89e")
 		)
 		(fp_arc
 			(start 0.55 -0.7)
@@ -6773,8 +7789,19 @@
 			(layer "F.Fab")
 			(uuid "7cbd3c37-05ed-48f8-a9d1-1d00095b09ed")
 		)
+		(fp_arc
+			(start -0.55 0.7)
+			(mid -1.25 0)
+			(end -0.55 -0.7)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "6ed8943a-5e14-455a-a35d-1d40f305b6c2")
+		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(uuid "43e385af-c051-4583-9a11-8fb18ddd8d15")
 			(effects
@@ -6785,16 +7812,16 @@
 			)
 		)
 		(pad "1" smd rect
-			(at -1.425 0)
+			(at -1.425 0 90)
 			(size 1.55 2.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net 2 "GND")
+			(net 13 "Net-(D1-K)")
 			(pinfunction "K")
 			(pintype "passive")
 			(uuid "ca41c7b9-3578-4cda-a7d1-ceb3632df433")
 		)
 		(pad "2" smd rect
-			(at 1.425 0)
+			(at 1.425 0 90)
 			(size 1.55 2.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 8 "Net-(D10-K)")
@@ -6814,6 +7841,60 @@
 				(xyz 0 0 0)
 			)
 		)
+	)
+	(gr_arc
+		(start 170.125631 62.625631)
+		(mid 192.388881 58.197195)
+		(end 205 77.071067)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "46206504-1503-4a02-9bf6-4557e0cd6279")
+	)
+	(gr_curve
+		(pts
+			(xy 135 77.07106) (xy 135 100) (xy 155 125) (xy 170 130)
+		)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "482429bb-2446-4eba-a6d3-79bfa3f07108")
+	)
+	(gr_curve
+		(pts
+			(xy 205 77.071067) (xy 205 100) (xy 185 125) (xy 170 130)
+		)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "d366f7e8-1fc4-4803-9d75-49d242e28e3e")
+	)
+	(gr_arc
+		(start 135 77.071066)
+		(mid 147.611118 58.197193)
+		(end 169.874369 62.625631)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "d8889f25-9ac2-46b3-bfba-1408bd840681")
+	)
+	(gr_line
+		(start 170.125631 62.625633)
+		(end 169.874369 62.625633)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "fb13aa13-0ca5-41c5-be41-831f8cf8bf72")
 	)
 	(embedded_fonts no)
 )
