@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "battery")(type "KiCad")(uri "${KIPRJMOD}/S8421-45R/S8421-45R.kicad_sym")(options "")(descr ""))
+)

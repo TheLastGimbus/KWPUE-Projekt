@@ -1,0 +1,1 @@
+min 20 milsów jak chce wytrawiać w open labie
