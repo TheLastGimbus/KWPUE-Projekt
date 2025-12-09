@@ -4,17 +4,21 @@
     {
       "analysis": "TRAN",
       "commands": [
-        ".tran 1m 10 0 1m uic",
+        ".tran 1m 5 0 1m",
         ".kicad adjustpaths",
         ".save all",
         ".probe alli",
         ".probe allp"
       ],
       "dottedSecondary": true,
+      "fixedY1scale": {
+        "max": 5.0,
+        "min": 0.0
+      },
       "margins": {
         "bottom": 45,
         "left": 70,
-        "right": 70,
+        "right": 160,
         "top": 30
       },
       "measurements": [],
