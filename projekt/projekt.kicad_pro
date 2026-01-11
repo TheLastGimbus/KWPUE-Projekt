@@ -60,7 +60,7 @@
       ],
       "drc_exclusions": [
         [
-          "unconnected_items|166750000|107750000|F.Cu|4|c16019df-6461-4cfa-860c-e352f7e046bf|7866a280-9bfd-4d49-89b8-4e0fffc28bfd",
+          "unconnected_items|166750000|107750000|F.Cu|4|c16019df-6461-4cfa-860c-e352f7e046bf|7bdc7c2b-0cea-4888-8d1e-3caa8ddc9887",
           ""
         ]
       ],
