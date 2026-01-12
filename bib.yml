@@ -3,3 +3,13 @@ wiki-ne555:
   author: "Wikipedia"
   type: Article
   url: https://en.wikipedia.org/wiki/555_timer_IC
+battery-footprint:
+  title: S8421-45R Symbol, Footprint & 3D Model by Harwin
+  author: SnapMagick
+  type: Web
+  url: https://www.snapeda.com/parts/S8421-45R/Harwin/view-part/
+github-ne555:
+  title: spice_models
+  author: cslammy
+  type: Web
+  url: https://github.com/cslammy/spice_models/blob/main/NE555.lib
