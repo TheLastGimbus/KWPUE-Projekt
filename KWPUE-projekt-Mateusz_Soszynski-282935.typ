@@ -56,11 +56,13 @@ Zasada przełączania par łańcuchów LED jest następująca: diody są połąc
 
 = Symulacja
 
-Wykonałem symulacje pracy układu przez pierwsze 4 sekundy - widać jak kondensator cyklicznie ładuje i rozładowuje się. Okres cyklu jest nieco inny niż idealna 1s, ale to akceptowalne. Jak widać układ pracuje w 6V, a nie 3 z pojedynczej baterii tak jak oryginalnie zakładałem (o czym poniżej w: @montaz).
+Wykonałem symulacje pracy układu przez pierwsze 4 sekundy - widać jak kondensator cyklicznie ładuje i rozładowuje się, a diody nieparzyste i parzyste naprzemiennie przełączają się.
+ 
+Okres cyklu jest nieco inny niż idealna 1s, ale to akceptowalne. Jak widać układ pracuje w 6V, a nie 3 z pojedynczej baterii tak jak oryginalnie zakładałem (o czym poniżej w: @montaz).
 
 KiCad nie posiadał wbudowanego modelu symulacji NE555, jednak znalazłem odpowiedni plik .lib w internecie@github-ne555.
 
-#rys("sim.png", "Przebieg symulacji pracy układu w KiCad'zie", width: 10cm)
+#align(center, grid(columns: 2, gutter: 2em, rys("sim.png", "Napięcie wyjściowe oraz naładowanie kondensatora", width: 9cm), rys("sim-d.png", "Prąd płynący przed diode parzystą i nieparzystą", width: 7.2cm)))
 
 = Projekt płytki PCB
 
@@ -71,6 +73,8 @@ Z racji oryginalnego kształtu płytki i ozdobnego charakteru, ułożenie ście�
 Footprint koszyczka na baterie który posiadałem nie był wbudowany w biblioteke KiCada, ale znalazłem go w internecie@battery-footprint. Footprinty LEDów dobrałem natomiast możliwie jak największe. Po wszystkim na płytce zostało sporo miejsca, więc umieściłem tam ozdobne napisy.
 
 #rys("pcb-color.svg", "Układ ścieżek PCB w KiCad'zie")
+
+#pagebreak()
 
 = Wykonanie płytki
 
@@ -110,7 +114,6 @@ Na koniec została chyba najprzyjemniejsza część - montaż elementów na pły
 
 Niestety, po uruchomieniu okazało się, że układ nie daje sobie rady na samych 3V z pojedynczej CR2032 - diody nieparzyste ledwo zauważalnie się świeciły. Pan Grzegorz zasugerował sprytne rozwiązanie - zastąpienie baterii dwoma o połowe cieńszymi CR2016 - nie wymagało to żadnej modyfikacji płytki, a układ działa w ten sposób na 6 V bez zarzutów!
 
-
 #pagebreak()
 
 = Wnioski<wnioski>
@@ -125,8 +128,6 @@ Własnoręczne wytrawianie płytek jest też bardzo uczącym, ale podatnym na b�
 W drugiej próbie pogrubiłem więc ścieżki do wyżej ustalonych 0,8 mm, jednak okazało się to potencjalnie zbędne, ponieważ po wymianie wytrawiacza i pomocy opiekunów sali, druga płytka wytrawiła się w zasadzie idealnie!
 
 #rys("pcb-fail.jpg", "Pierwsza wersja płytki, zakończona niepowodzeniem", width: 9cm)
-
-
 
 #pagebreak()
 
